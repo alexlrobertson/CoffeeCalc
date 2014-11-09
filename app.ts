@@ -37,7 +37,7 @@ class CalculatorController {
   }
 }
 
-function brewRatiosService($http:ng.IHttpService, $q:ng.IQService, $log:ng.ILogService) {
+function brewRatiosService($http:ng.IHttpService, $q:ng.IQService, $log:ng.ILogService) : ng.IPromise<Array<BrewRatio>> {
   var deferred = $q.defer();
 
   $http.get('ratios.json')
