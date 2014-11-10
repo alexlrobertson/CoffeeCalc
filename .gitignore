@@ -3,6 +3,8 @@
 *.js
 !gulpfile.js
 
+css/*.css
+
 node_modules
 
 typings

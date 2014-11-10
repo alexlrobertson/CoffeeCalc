@@ -21,4 +21,4 @@ gulp.task("watch", function () {
   gulp.watch("./app.ts", ["scripts"]);
 });
 
-gulp.task("default", ["style"]);
+gulp.task("default", ["styles", "scripts", "watch"]);

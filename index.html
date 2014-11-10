@@ -3,20 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body ng-app="coffee">
 
+  <div class="container">
   <form action="" coffee-calculator>
-    <div>
-      <label for="coffee-weight">Coffee (g)</label>
+    <div class="form-control">
+      <label for="coffee-weight" class="label">
+        Coffee (g)
+      </label>
       <input type="number"
         id="coffee-weight"
-        min="10"
+        min="1"
         ng-model="calculator.coffee">
     </div>
 
-    <div>
-      <label for="ratio">Ratio</label>
+    <div class="form-control">
+      <label for="ratio" class="label">
+        Ratio
+      </label>
       <input type="number"
         id="ratio"
         min="1"
@@ -24,12 +30,22 @@
         ng-model="calculator.ratio">:1
     </div>
 
-    <div>Water (g/ml): <span ng-bind="calculator.water()"></span></div>
+    <div>
+      <span class="label">Water (g/ml):</span>
+      <span ng-bind="calculator.water().toFixed(2)"></span>
+    </div>
 
-    <div>Cups: <span ng-bind="calculator.cups()"></span></div>
+    <div>
+      <span class="label">Servings:</span>
+      <span ng-bind="calculator.cups().toFixed(2)"></span>
+    </div>
 
-    <div ng-bind="calculator.type().name"></div>
+    <div>
+      <span class="label">Brew Method:</span>
+      <span ng-bind="calculator.type().name"></span>
+    </div>
   </form>
+  </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
