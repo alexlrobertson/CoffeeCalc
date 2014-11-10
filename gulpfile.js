@@ -3,7 +3,7 @@ var stylus = require("gulp-stylus");
 var ts = require("gulp-typescript");
 
 gulp.task("scripts", function () {
-  var tsResult = gulp.src("./*.ts")
+  var tsResult = gulp.src("./app.ts")
     .pipe(ts());
 
   tsResult.js
