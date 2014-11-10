@@ -10,14 +10,15 @@ gulp.task("scripts", function () {
     .pipe(gulp.dest("./"));
 });
 
-gulp.task("style", function () {
+gulp.task("styles", function () {
   gulp.src("./stylus/style.styl")
     .pipe(stylus())
     .pipe(gulp.dest("./css/"));
 });
 
 gulp.task("watch", function () {
-  gulp.watch("./stylus/*.styl", ["style"]);
+  gulp.watch("./stylus/*.styl", ["styles"]);
+  gulp.watch("./app.ts", ["scripts"]);
 });
 
 gulp.task("default", ["style"]);
