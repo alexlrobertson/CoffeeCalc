@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body ng-app="coffee">
 
   <div class="container">
   <form action="" coffee-calculator>
-    <div class="form-control">
+    <div class="row">
       <label for="coffee-weight" class="label">
         Coffee (g)
       </label>
@@ -28,12 +28,12 @@
         ng-click="calculator.setCoffee(calculator.coffee - 1)">-</button>
     </div>
 
-    <div>
+    <div class="row">
       <span class="label">Water (g/ml):</span>
       <span ng-bind="calculator.water().toFixed(2)"></span>
     </div>
 
-    <div class="form-control">
+    <div class="row">
       <label for="ratio" class="label">
         Ratio
       </label>
@@ -52,12 +52,12 @@
     </div>
 
 
-    <div>
+    <div class="row">
       <span class="label">Servings:</span>
       <span ng-bind="calculator.cups().toFixed(2)"></span>
     </div>
 
-    <div>
+    <div class="row">
       <span class="label">Brew Method:</span>
       <span ng-bind="calculator.type().name"></span>
     </div>
