@@ -1,3 +1,8 @@
 *~
+
 *.js
+!gulpfile.js
+
+node_modules
+
 typings
