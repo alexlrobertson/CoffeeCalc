@@ -1,5 +1,14 @@
 var gulp = require("gulp");
 var stylus = require("gulp-stylus");
+var ts = require("gulp-typescript");
+
+gulp.task("scripts", function () {
+  var tsResult = gulp.src("./*.ts")
+    .pipe(ts());
+
+  tsResult.js
+    .pipe(gulp.dest("./"));
+});
 
 gulp.task("style", function () {
   gulp.src("./stylus/style.styl")
