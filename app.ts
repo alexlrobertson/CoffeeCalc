@@ -16,6 +16,20 @@ class CalculatorController {
     });
   }
 
+  public setCoffee(value:number) : void {
+    if (!angular.isNumber(value) || value <= 0 || value > 99) {
+      return;
+    }
+    this.coffee = value;
+  }
+
+  public setRatio(value:number) : void {
+    if (!angular.isNumber(value) || value <= 0 || value > 20) {
+      return;
+    }
+    this.ratio = value;
+  }
+
   public type() : BrewRatio {
     var itemsByCloseness = _.sortBy(
       this.brewRatios,

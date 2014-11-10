@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body ng-app="coffee">
@@ -15,25 +16,41 @@
       </label>
       <input type="number"
         id="coffee-weight"
+        class="coffee-input"
         min="1"
+        max="99"
         ng-model="calculator.coffee">
-    </div>
 
-    <div class="form-control">
-      <label for="ratio" class="label">
-        Ratio
-      </label>
-      <input type="number"
-        id="ratio"
-        min="1"
-        max="20"
-        ng-model="calculator.ratio">:1
+      <button type="button" title="Increase amount of coffee"
+        ng-click="calculator.setCoffee(calculator.coffee + 1)">+</button>
+      <button type="button"
+        title="Decrease amount of coffee"
+        ng-click="calculator.setCoffee(calculator.coffee - 1)">-</button>
     </div>
 
     <div>
       <span class="label">Water (g/ml):</span>
       <span ng-bind="calculator.water().toFixed(2)"></span>
     </div>
+
+    <div class="form-control">
+      <label for="ratio" class="label">
+        Ratio
+      </label>
+      1:<input type="number"
+        id="ratio"
+        class="ratio-input"
+        min="1"
+        max="20"
+        ng-model="calculator.ratio">
+
+      <button type="button" title="Increase ratio"
+        ng-click="calculator.setRatio(calculator.ratio + 1)">+</button>
+      <button type="button"
+        title="Decrease ratio"
+        ng-click="calculator.setRatio(calculator.ratio - 1)">-</button>
+    </div>
+
 
     <div>
       <span class="label">Servings:</span>
